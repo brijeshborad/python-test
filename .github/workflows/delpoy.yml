@@ -18,8 +18,10 @@ jobs:
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
-          args: deploy
+          args: -c "serverless deploy --stage=dev --verbose"
+          entrypoint: /bin/bash
         env:
            AWS_ACCESS_KEY_ID: AKIAXGYYVA2O22WIQC4M
            AWS_SECRET_ACCESS_KEY: 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
+           SLS_DEBUG: 1
 
