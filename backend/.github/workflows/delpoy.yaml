@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - name: Configure AWS credentials from Production account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: AKIAXGYYVA2O4QXILQLN
+          aws-secret-access-key: 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
+          aws-region: us-east-2
+          profile_name: default
+          project_name: test-python
+          runtime: python3.7
+          s3_bucket: up-python-test
+      - name: Run a multi-line script
+        run: |
+          pip3 install -r requirements.txt -t .
+          zip -r test-dep-dev.zip .
+      - name: AWS Lambda Deploy
+        uses: appleboy/lambda-action@v0.0.4
+        with:
+          function_name: test-python
+          zip_file: test-dep-dev.zip
+

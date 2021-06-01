@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+    margin: 0;
+    font-family: arial, tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    direction: ltr;
+    background: white;
+}
+
+.main {
+    margin: 10% auto 0 auto;
+    padding: 30px;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+}
+
+.label {
+    font-size: 14px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.label,
+.input {
+    float: left;
+    clear: both;
+}
+
+.input, .send-button {
+    margin: 15px 0;
+    padding: 15px 10px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #bbb;
+    border-radius: 20px;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+
+.main .input:focus {
+    border-color: cornflowerblue;
+}
+
+.send-button {
+    padding: 15px 50px;
+    width: auto;
+    background: #1abc9c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    clear: right;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+
+.send-button:hover {
+    opacity: 0.8;
+}
+
+.send-button:active {
+    opacity: 0.4;
+}
+
+.header {
+    margin: 0 auto;
+    width: 300px;
+    font-family: 'Lily Script One', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: lightgray;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+
+.header:hover {
+    color: cornflowerblue;
+}
+
+.invalid {
+    display: block;
+    width: 100%;
+    margin-top: 90px;
+    color: #dc3545;
+    margin-left: 10px;
+}
+
+.invalid-input {
+    border-color: #dc3545;
+}
