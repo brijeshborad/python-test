@@ -16,7 +16,7 @@ jobs:
         working-directory: ./backend
     steps:
       - name: Check directory
-        run: pwd
+        run: ls -a
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
