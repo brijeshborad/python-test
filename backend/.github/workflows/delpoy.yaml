@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
+        working-directory: ./backend
         uses: actions/setup-python@v2
         with:
           python-version: '3.7'
@@ -28,11 +29,13 @@ jobs:
           runtime: python3.7
           s3_bucket: up-python-test
       - name: Run a multi-line script
+        working-directory: ./backend
         run: |
           pip3 install -r requirements.txt -t .
           zip -r test-dep-dev.zip .
       - name: AWS Lambda Deploy
         uses: appleboy/lambda-action@v0.0.4
+        working-directory: ./backend
         with:
           function_name: test-python
           zip_file: test-dep-dev.zip
