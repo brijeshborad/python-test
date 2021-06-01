@@ -15,12 +15,10 @@ jobs:
       run:
         working-directory: ./backend
     steps:
-      - name: Check directory
-        run: ls -a
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
-          args: -c "serverless deploy --stage=dev --verbose"
+          args: -c "cd backend &&  serverless deploy --stage=dev --verbose"
         env:
            AWS_ACCESS_KEY_ID: AKIAXGYYVA2O22WIQC4M
            AWS_SECRET_ACCESS_KEY: 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
